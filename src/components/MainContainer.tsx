@@ -8,6 +8,7 @@ import SocialIcons from "./SocialIcons";
 import Vision from "./Vision";
 import Work from "./Work";
 import setSplitText from "./utils/splitText";
+import StarField from "./StarField";
 
 const TechStack = lazy(() => import("./TechStack"));
 
@@ -30,6 +31,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
 
   return (
     <div className="container-main">
+      <StarField />
       <Cursor />
       <Navbar />
       <SocialIcons />

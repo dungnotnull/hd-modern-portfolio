@@ -1,27 +1,29 @@
 .vision-section {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  place-items: center;
   position: relative;
   height: auto;
+  min-height: 60vh;
   width: var(--cWidth);
   max-width: 1920px;
   margin: auto;
-  padding: 100px 0;
+  padding: 120px 0;
 }
 
 .vision-container {
   width: 100%;
   max-width: 900px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .vision-section h2 {
-  font-size: 60px;
+  font-size: 50px;
   font-weight: 400;
   text-transform: uppercase;
-  margin: 0 0 50px 0;
-  letter-spacing: 2px;
+  margin: 0 0 40px 0;
+  letter-spacing: 3px;
 }
 
 .vision-section h2 > span {
@@ -35,33 +37,34 @@
 }
 
 .vision-content p {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 300;
-  line-height: 1.6;
-  letter-spacing: 0.5px;
-  color: #d4d4d4;
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+  color: #b4b4b4;
 }
 
 @media only screen and (max-width: 1400px) {
   .vision-section h2 {
-    font-size: 50px;
+    font-size: 42px;
   }
   .vision-content p {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
 @media only screen and (max-width: 900px) {
   .vision-section {
-    padding: 50px 0;
+    padding: 60px 0;
+    align-items: center;
   }
   .vision-section h2 {
-    font-size: 40px;
+    font-size: 34px;
   }
   .vision-content p {
-    font-size: 16px;
+    font-size: 15px;
   }
   .vision-container {
-    width: calc(100% - 25px);
+    width: 100%;
   }
 }

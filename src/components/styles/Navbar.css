@@ -3,8 +3,8 @@
   max-width: var(--cMaxWidth);
   width: var(--cWidth);
   justify-content: space-between;
+  align-items: center;
   padding: 20px 0px;
-  margin-bottom: -100px;
   box-sizing: border-box;
   position: fixed;
   left: 50%;
@@ -13,14 +13,14 @@
   z-index: 9999;
 }
 .header ul {
-  font-size: 12px;
+  font-size: 11px;
   display: flex;
   flex-direction: column;
   margin: 0;
   padding: 0;
   list-style: none;
-  column-gap: 40px;
-  row-gap: 8px;
+  column-gap: 24px;
+  row-gap: 6px;
   align-items: end;
 }
 .header ul li {
@@ -29,6 +29,7 @@
   color: #ccc;
   font-weight: 600;
   cursor: pointer;
+  white-space: nowrap;
 }
 .navbar-connect {
   position: absolute;
@@ -36,7 +37,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-size: 15px;
+  font-size: 14px;
   letter-spacing: 1px;
   font-weight: 500;
 }
@@ -52,7 +53,8 @@
   .header ul {
     flex-direction: row;
     align-items: center;
-    font-size: 14px;
+    font-size: 12px;
+    column-gap: 20px;
   }
   .header ul li {
     color: #eae5ec;
@@ -71,11 +73,11 @@
     padding: 35px 0px;
   }
   .header ul {
-    column-gap: 80px;
-    font-size: 16px;
+    column-gap: 36px;
+    font-size: 13px;
   }
   .navbar-connect {
-    font-size: 16px;
+    font-size: 15px;
   }
   .navbar-title {
     font-size: 18px;
