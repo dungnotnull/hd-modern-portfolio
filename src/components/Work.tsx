@@ -1,73 +1,134 @@
-import { useEffect } from "react";
 import "./styles/Work.css";
 import WorkImage from "./WorkImage";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const projects = [
+  {
+    name: "Hybrid Harness Chaos PRM",
+    category: "AI Agent Framework",
+    description:
+      "Comprehensive AI Agent skill framework standardizing Harness & Chaos Engineering workflows",
+    tools: "Python, AI Agents, DevOps",
+    link: "https://github.com/dungnotnull/hybrid-harness-chaos-process-prm",
+  },
+  {
+    name: "OpenCLI",
+    category: "AI CLI Agent",
+    description:
+      "Unified self-improving AI CLI agent optimized for 12+ LLMs with context compression and cost tracking",
+    tools: "TypeScript, LLMs, Docker",
+    link: "https://github.com/dungnotnull/openCLI-all-your-LLM-just-need",
+  },
+  {
+    name: "Futureminal2",
+    category: "AI-Native Environment",
+    description:
+      "AI-native operating environment for developers combining intelligent terminals and automation",
+    tools: "Rust, AI, Workflows",
+    link: "https://github.com/dungnotnull/futureminal2",
+  },
+  {
+    name: "Scam Whisperer",
+    category: "Computer Vision",
+    description:
+      "Vision-first scam analysis platform detecting phishing, impersonation, and social engineering attacks",
+    tools: "TypeScript, CV, Security",
+    link: "https://github.com/dungnotnull/scam-whisperer-agent",
+  },
+  {
+    name: "WiFi Elderly Care",
+    category: "Deep Learning",
+    description:
+      "Contactless elderly care monitoring using WiFi CSI with deep learning for activity recognition",
+    tools: "C, Python, Deep Learning",
+    link: "https://github.com/dungnotnull/wifi-sensing-based-elderlycare-deeplearning",
+  },
+  {
+    name: "Multi-Camera Pipeline",
+    category: "Computer Vision",
+    description:
+      "Multi-camera video analytics for detecting suspected cases with multi-object tracking and ReID",
+    tools: "Jupyter, Python, CV",
+    link: "https://github.com/dungnotnull/ticket-suspicion-multicamera-pipeline-computer-vision",
+  },
+];
+
 const Work = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-  let translateX: number = 0;
+    if (!containerRef.current) return;
 
-  function setTranslateX() {
-    const box = document.getElementsByClassName("work-box");
-    const rectLeft = document
-      .querySelector(".work-container")!
-      .getBoundingClientRect().left;
-    const rect = box[0].getBoundingClientRect();
-    const parentWidth = box[0].parentElement!.getBoundingClientRect().width;
-    let padding: number =
-      parseInt(window.getComputedStyle(box[0]).padding) / 2;
-    translateX = rect.width * box.length - (rectLeft + parentWidth) + padding;
-  }
+    let translateX: number = 0;
 
-  setTranslateX();
+    function setTranslateX() {
+      const box = document.getElementsByClassName("work-box");
+      if (!box.length) return;
+      const rectLeft = document
+        .querySelector(".work-container")!
+        .getBoundingClientRect().left;
+      const rect = box[0].getBoundingClientRect();
+      const parentWidth = box[0].parentElement!.getBoundingClientRect().width;
+      let padding: number =
+        parseInt(window.getComputedStyle(box[0]).padding) / 2;
+      translateX = rect.width * box.length - (rectLeft + parentWidth) + padding;
+    }
 
-  let timeline = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".work-section",
-      start: "top top",
-      end: `+=${translateX}`, // Use actual scroll width
-      scrub: true,
-      pin: true,
-      id: "work",
-    },
-  });
+    setTranslateX();
 
-  timeline.to(".work-flex", {
-    x: -translateX,
-    ease: "none",
-  });
+    let timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".work-section",
+        start: "top top",
+        end: `+=${translateX}`,
+        scrub: true,
+        pin: true,
+        id: "work",
+      },
+    });
 
-  // Clean up (optional, good practice)
-  return () => {
-    timeline.kill();
-    ScrollTrigger.getById("work")?.kill();
-  };
-}, []);
+    timeline.to(".work-flex", {
+      x: -translateX,
+      ease: "none",
+    });
+
+    return () => {
+      timeline.kill();
+      ScrollTrigger.getById("work")?.kill();
+    };
+  }, []);
+
   return (
-    <div className="work-section" id="work">
-      <div className="work-container section-container">
+    <div className="work-section" id="projects">
+      <div className="work-container section-container" ref={containerRef}>
         <h2>
-          My <span>Work</span>
+          My <span>Projects</span>
         </h2>
         <div className="work-flex">
-          {[...Array(6)].map((_value, index) => (
+          {projects.map((project, index) => (
             <div className="work-box" key={index}>
               <div className="work-info">
                 <div className="work-title">
                   <h3>0{index + 1}</h3>
-
                   <div>
-                    <h4>Project Name</h4>
-                    <p>Category</p>
+                    <h4>{project.name}</h4>
+                    <p>{project.category}</p>
                   </div>
                 </div>
-                <h4>Tools and features</h4>
-                <p>Javascript, TypeScript, React, Threejs</p>
+                <h4>Description</h4>
+                <p>{project.description}</p>
+                <h4>Tech Stack</h4>
+                <p>{project.tools}</p>
               </div>
-              <WorkImage image="/images/placeholder.webp" alt="" />
+              <WorkImage
+                image="/images/placeholder.webp"
+                alt={project.name}
+                link={project.link}
+              />
             </div>
           ))}
         </div>

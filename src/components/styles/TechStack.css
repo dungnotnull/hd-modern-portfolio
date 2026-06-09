@@ -1,0 +1,85 @@
+.techstack {
+  width: 100%;
+  max-width: 1920px;
+  margin: auto;
+  padding: 100px 0;
+  position: relative;
+}
+
+.techstack h2 {
+  font-size: 60px;
+  text-align: center;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 60px;
+  letter-spacing: 2px;
+}
+
+.techstack h2 > span {
+  color: var(--accentColor);
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 25px 15px;
+  border-radius: 12px;
+  background-color: rgba(139, 92, 246, 0.05);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  transition: all 0.3s ease;
+}
+
+.tech-item:hover {
+  background-color: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.4);
+  transform: translateY(-5px);
+}
+
+.tech-icon {
+  font-size: 36px;
+  color: var(--accentColor);
+}
+
+.tech-name {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: #d4d4d4;
+}
+
+@media only screen and (max-width: 900px) {
+  .techstack h2 {
+    font-size: 40px;
+  }
+  .tech-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+  }
+  .tech-item {
+    padding: 20px 10px;
+  }
+  .tech-icon {
+    font-size: 28px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .techstack {
+    padding: 50px 0;
+  }
+  .techstack h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+}
