@@ -45,7 +45,7 @@ export function setCharTimeline(
     if (object.name === "screenlight") {
       object.material.transparent = true;
       object.material.opacity = 0;
-      object.material.emissive.set("#8b5cf6");
+      object.material.emissive.set("#06b6d4");
       gsap.timeline({ repeat: -1, repeatRefresh: true }).to(object.material, {
         emissiveIntensity: () => intensity * 8,
         duration: () => Math.random() * 0.6,
@@ -112,6 +112,29 @@ export function setCharTimeline(
           { opacity: 1, scaleX: 1.4 },
           { opacity: 0, scale: 0, y: "-70%", duration: 5, delay: 2 },
           0.3
+        );
+
+      // Fade out character after Vision section
+      const tl4 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".vision-section",
+          start: "top 60%",
+          end: "bottom 40%",
+          scrub: true,
+          invalidateOnRefresh: true,
+        },
+      });
+
+      tl4
+        .to(".character-model", {
+          opacity: 0,
+          y: "-10%",
+          duration: 1,
+        })
+        .to(
+          camera.position,
+          { z: 85, duration: 1 },
+          0
         );
     }
   }

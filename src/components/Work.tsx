@@ -131,6 +131,33 @@ const Work = () => {
               />
             </div>
           ))}
+          <div className="work-box work-box-cta" key="cta">
+            <div className="work-info">
+              <div className="work-title">
+                <h3>0{projects.length + 1}</h3>
+                <div>
+                  <h4>And more...</h4>
+                  <p>Explore all repos</p>
+                </div>
+              </div>
+              <h4>Discover more</h4>
+              <p>
+                Check out 100+ projects spanning AI agents, computer vision,
+                DevOps, security tools, and more on my GitHub profile.
+              </p>
+            </div>
+            <a
+              href="https://github.com/dungnotnull?tab=repositories"
+              target="_blank"
+              className="work-cta-link"
+              data-cursor="disable"
+            >
+              <span>View All Repositories</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
