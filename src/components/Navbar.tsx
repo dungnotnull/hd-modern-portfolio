@@ -35,7 +35,7 @@ const Navbar = () => {
           const elem = e.currentTarget as HTMLAnchorElement;
           const section = elem.getAttribute("data-href");
           if (section) {
-            const target = document.querySelector(section);
+            const target = document.querySelector(section) as HTMLElement;
             if (target) {
               lenisInstance.scrollTo(target, { offset: 0 });
             }

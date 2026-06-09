@@ -19,7 +19,6 @@ export function splitText(
   const revertFns: (() => void)[] = [];
 
   const needChars = options.type?.includes("chars") ?? false;
-  const needWords = options.type?.includes("words") || needChars;
   const needLines = options.type?.includes("lines") ?? false;
 
   elements.forEach((el) => {
