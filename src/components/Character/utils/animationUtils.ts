@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { GLTF } from "three-stdlib";
+import type { GLTF } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { eyebrowBoneNames, typingBoneNames } from "../../../data/boneData";
 
 const setAnimations = (gltf: GLTF) => {

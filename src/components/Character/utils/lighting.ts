@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { RGBELoader } from "three-stdlib";
+import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js";
 import { gsap } from "gsap";
 
 const setLighting = (scene: THREE.Scene) => {
