@@ -9,6 +9,7 @@ const Loading = ({ percent }: { percent: number }) => {
   const [loaded, setLoaded] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [clicked, setClicked] = useState(false);
+  const [fading, setFading] = useState(false);
 
   if (percent >= 100) {
     setTimeout(() => {
@@ -20,16 +21,18 @@ const Loading = ({ percent }: { percent: number }) => {
   }
 
   useEffect(() => {
+    if (!isLoaded) return;
     import("./utils/initialFX").then((module) => {
-      if (isLoaded) {
-        setClicked(true);
-        setTimeout(() => {
-          if (module.initialFX) {
-            module.initialFX();
-          }
-          setIsLoading(false);
-        }, 900);
+      if (module.initialFX) {
+        module.initialFX();
       }
+      setClicked(true);
+      setTimeout(() => {
+        setFading(true);
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 800);
+      }, 500);
     });
   }, [isLoaded]);
 
@@ -44,12 +47,12 @@ const Loading = ({ percent }: { percent: number }) => {
 
   return (
     <>
-      <div className="loading-header">
+      <div className={`loading-header${fading ? " loading-fade" : ""}`}>
         <a href="/#" className="loader-title" data-cursor="disable">
           dungnotnull
         </a>
       </div>
-      <div className="loading-screen">
+      <div className={`loading-screen${fading ? " loading-fade" : ""}`}>
         <div className="loading-marquee">
           <Marquee>
             <span> Full-stack Engineer</span>

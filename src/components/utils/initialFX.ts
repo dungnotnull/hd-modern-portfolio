@@ -6,11 +6,6 @@ export function initialFX() {
   document.body.style.overflowY = "auto";
   lenisInstance.start();
   document.getElementsByTagName("main")[0].classList.add("main-active");
-  gsap.to("body", {
-    backgroundColor: "#0a0a0a",
-    duration: 0.5,
-    delay: 1,
-  });
 
   const landingH3 = document.querySelector(".landing-info h3") as HTMLElement;
   const landingH2 = document.querySelector(".landing-intro h2") as HTMLElement;

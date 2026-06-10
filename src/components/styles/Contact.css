@@ -84,9 +84,54 @@ a.contact-social {
   }
   .contact-section {
     margin-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
   }
   .contact-container {
     width: calc(100% - 25px);
+  }
+}
+
+.footer {
+  margin-top: 80px;
+}
+
+.footer-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(139, 92, 246, 0.2) 20%,
+    rgba(139, 92, 246, 0.2) 80%,
+    transparent
+  );
+  margin-bottom: 24px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-brand {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  color: var(--accentColor);
+  opacity: 0.7;
+}
+
+.footer-copy {
+  font-size: 12px;
+  font-weight: 300;
+  color: #666;
+  letter-spacing: 0.3px;
+}
+
+@media only screen and (max-width: 900px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
   }
 }

@@ -10,10 +10,12 @@ export let lenisInstance: Lenis;
 
 const Navbar = () => {
   useEffect(() => {
+    const isDesktop = window.innerWidth > 1024;
+
     lenisInstance = new Lenis({
       duration: 1.7,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
+      smoothWheel: isDesktop,
     });
 
     lenisInstance.on("scroll", ScrollTrigger.update);
@@ -56,11 +58,11 @@ const Navbar = () => {
           dungnotnull
         </a>
         <a
-          href="mailto:contact@dungnotnull.dev"
+          href="mailto:truonghoangdung57@gmail.com"
           className="navbar-connect"
           data-cursor="disable"
         >
-          contact@dungnotnull.dev
+          truonghoangdung57@gmail.com
         </a>
         <ul>
           <li>

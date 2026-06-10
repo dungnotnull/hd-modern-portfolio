@@ -8,6 +8,26 @@
   display: flex;
   place-items: center;
   justify-content: center;
+  transition: opacity 0.8s ease-out;
+}
+.loading-fade {
+  opacity: 0;
+  pointer-events: none;
+}
+.loading-header {
+  width: var(--cWidth);
+  max-width: var(--cMaxWidth);
+  position: fixed;
+  z-index: 9999999999;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 20px 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  color: var(--backgroundColor);
+  transition: opacity 0.5s ease-out;
 }
 .loading-button {
   padding: 20px 50px;
@@ -178,20 +198,6 @@
 
 .loading-complete .loading-container {
   max-width: 0px;
-}
-.loading-header {
-  width: var(--cWidth);
-  max-width: var(--cMaxWidth);
-  position: fixed;
-  z-index: 9999999999;
-  display: flex;
-  justify-content: space-between;
-  box-sizing: border-box;
-  padding: 20px 0px;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 0;
-  color: var(--backgroundColor);
 }
 .loader-title {
   font-weight: 700;

@@ -7,7 +7,7 @@ const Landing = ({ children }: PropsWithChildren) => {
       <div className="landing-section" id="landingDiv">
         <div className="landing-container">
           <div className="landing-intro">
-            <h2>Hello! I'm</h2>
+            <h2>Hello_world!&nbsp;I'm</h2>
             <h1>
               HOANG
               <br />
@@ -15,15 +15,12 @@ const Landing = ({ children }: PropsWithChildren) => {
             </h1>
           </div>
           <div className="landing-info">
-            <h3>A</h3>
-            <h2 className="landing-info-h2">
-              <div className="landing-h2-1">Full-stack Engineer</div>
-              <div className="landing-h2-2">AI Agent Builder</div>
-            </h2>
-            <h2>
-              <div className="landing-h2-info">Full-stack Engineer</div>
-              <div className="landing-h2-info-1">AI Agent Builder</div>
-            </h2>
+            {/* <h3>A</h3> */}
+            <div className="landing-h2-info">Fullstack Engineer</div>
+            <div className="landing-h2-info-1">AI-first Engineer</div>
+            <div className="landing-subtitle">
+              GenAI-powered &middot; Harness &middot; Chaos Engineering focused
+            </div>
           </div>
         </div>
         {children}

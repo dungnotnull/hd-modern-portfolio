@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="fg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#e0e7ff"/>
+    </linearGradient>
+  </defs>
+  <!-- Background rounded square -->
+  <rect width="64" height="64" rx="14" ry="14" fill="url(#bg)"/>
+  <!-- Subtle inner glow overlay -->
+  <rect width="64" height="64" rx="14" ry="14" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+  <!-- "H" letter -->
+  <text
+    x="8"
+    y="46"
+    font-family="'Space Grotesk', 'Inter', system-ui, sans-serif"
+    font-size="36"
+    font-weight="700"
+    fill="url(#fg)"
+    letter-spacing="-1"
+  >HD</text>
+  <!-- Small decorative dot -->
+  <circle cx="56" cy="12" r="3" fill="rgba(255,255,255,0.5)"/>
+</svg>

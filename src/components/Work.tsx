@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const projects = [
+const openSources = [
   {
     name: "Hybrid Harness Chaos PRM",
     category: "AI Agent Framework",
@@ -14,6 +14,7 @@ const projects = [
       "Comprehensive AI Agent skill framework standardizing Harness & Chaos Engineering workflows",
     tools: "Python, AI Agents, DevOps",
     link: "https://github.com/dungnotnull/hybrid-harness-chaos-process-prm",
+    thumbnail: "/images/opensources/harnessanhchaos.png",
   },
   {
     name: "OpenCLI",
@@ -22,6 +23,7 @@ const projects = [
       "Unified self-improving AI CLI agent optimized for 12+ LLMs with context compression and cost tracking",
     tools: "TypeScript, LLMs, Docker",
     link: "https://github.com/dungnotnull/openCLI-all-your-LLM-just-need",
+    thumbnail: "/images/opensources/opencli.png",
   },
   {
     name: "Futureminal2",
@@ -30,6 +32,7 @@ const projects = [
       "AI-native operating environment for developers combining intelligent terminals and automation",
     tools: "Rust, AI, Workflows",
     link: "https://github.com/dungnotnull/futureminal2",
+    thumbnail: "/images/opensources/futureminal2.png",
   },
   {
     name: "Scam Whisperer",
@@ -38,6 +41,7 @@ const projects = [
       "Vision-first scam analysis platform detecting phishing, impersonation, and social engineering attacks",
     tools: "TypeScript, CV, Security",
     link: "https://github.com/dungnotnull/scam-whisperer-agent",
+    thumbnail: "/images/opensources/scam.png",
   },
   {
     name: "WiFi Elderly Care",
@@ -46,6 +50,7 @@ const projects = [
       "Contactless elderly care monitoring using WiFi CSI with deep learning for activity recognition",
     tools: "C, Python, Deep Learning",
     link: "https://github.com/dungnotnull/wifi-sensing-based-elderlycare-deeplearning",
+    thumbnail: "/images/opensources/wifielderly.png",
   },
   {
     name: "Multi-Camera Pipeline",
@@ -54,6 +59,7 @@ const projects = [
       "Multi-camera video analytics for detecting suspected cases with multi-object tracking and ReID",
     tools: "Jupyter, Python, CV",
     link: "https://github.com/dungnotnull/ticket-suspicion-multicamera-pipeline-computer-vision",
+    thumbnail: "/images/opensources/multicamera.png",
   },
 ];
 
@@ -62,6 +68,7 @@ const Work = () => {
 
   useEffect(() => {
     if (!containerRef.current) return;
+    if (window.innerWidth <= 1024) return;
 
     let translateX: number = 0;
 
@@ -103,13 +110,13 @@ const Work = () => {
   }, []);
 
   return (
-    <div className="work-section" id="projects">
+    <div className="work-section" id="open-sources">
       <div className="work-container section-container" ref={containerRef}>
         <h2>
-          My <span>Projects</span>
+          Open <span>Sources</span>
         </h2>
         <div className="work-flex">
-          {projects.map((project, index) => (
+          {openSources.map((project, index) => (
             <div className="work-box" key={index}>
               <div className="work-info">
                 <div className="work-title">
@@ -125,7 +132,7 @@ const Work = () => {
                 <p>{project.tools}</p>
               </div>
               <WorkImage
-                image="/images/placeholder.webp"
+                image={project.thumbnail ?? "/images/placeholder.webp"}
                 alt={project.name}
                 link={project.link}
               />
@@ -134,7 +141,7 @@ const Work = () => {
           <div className="work-box work-box-cta" key="cta">
             <div className="work-info">
               <div className="work-title">
-                <h3>0{projects.length + 1}</h3>
+                <h3>0{openSources.length + 1}</h3>
                 <div>
                   <h4>And more...</h4>
                   <p>Explore all repos</p>

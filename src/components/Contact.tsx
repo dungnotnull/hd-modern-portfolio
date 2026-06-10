@@ -1,7 +1,9 @@
-import { MdArrowOutward, MdCopyright } from "react-icons/md";
+import { MdArrowOutward } from "react-icons/md";
 import "./styles/Contact.css";
 
 const Contact = () => {
+  const year = new Date().getFullYear();
+
   return (
     <div className="contact-section section-container" id="contact">
       <div className="contact-container">
@@ -11,10 +13,10 @@ const Contact = () => {
             <h4>Email</h4>
             <p>
               <a
-                href="mailto:contact@dungnotnull.dev"
+                href="mailto:truonghoangdung57@gmail.com"
                 data-cursor="disable"
               >
-                contact@dungnotnull.dev
+                truonghoangdung57@gmail.com
               </a>
             </p>
           </div>
@@ -41,12 +43,16 @@ const Contact = () => {
             <h2>
               Designed and Developed <br /> by <span>Hoang Dung</span>
             </h2>
-            <h5>
-              <MdCopyright /> 2025
-            </h5>
           </div>
         </div>
       </div>
+      <footer className="footer">
+        <div className="footer-divider" />
+        <div className="footer-content">
+          <span className="footer-brand">dungnotnull</span>
+          <span className="footer-copy">&copy; {year} Hoang Dung. All rights reserved.</span>
+        </div>
+      </footer>
     </div>
   );
 };

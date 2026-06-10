@@ -4,17 +4,15 @@ import {
   FaReact,
   FaDocker,
   FaNodeJs,
-  FaGithub,
-} from "react-icons/fa6";
+  FaAws,
+} from "react-icons/fa";
 import {
   SiTypescript,
-  SiC,
-  SiThreedotjs,
+  SiMongodb,
   SiTensorflow,
   SiPytorch,
   SiPostgresql,
   SiLinux,
-  SiGit,
 } from "react-icons/si";
 import "./styles/TechStack.css";
 
@@ -22,17 +20,15 @@ const skills = [
   { name: "Python", icon: FaPython },
   { name: "TypeScript", icon: SiTypescript },
   { name: "Rust", icon: FaRust },
-  { name: "C", icon: SiC },
   { name: "React", icon: FaReact },
-  { name: "Three.js", icon: SiThreedotjs },
   { name: "Node.js", icon: FaNodeJs },
-  { name: "Docker", icon: FaDocker },
   { name: "TensorFlow", icon: SiTensorflow },
   { name: "PyTorch", icon: SiPytorch },
   { name: "PostgreSQL", icon: SiPostgresql },
+  { name: "MongoDB", icon: SiMongodb },
+  { name: "Docker", icon: FaDocker },
+  { name: "AWS", icon: FaAws },
   { name: "Linux", icon: SiLinux },
-  { name: "Git", icon: SiGit },
-  { name: "GitHub", icon: FaGithub },
 ];
 
 const TechStack = () => {

@@ -106,7 +106,13 @@ export function splitText(
           lineSpan.className = options.linesClass;
         }
         lineSpan.style.overflow = "hidden";
-        lineWords.forEach((w) => lineSpan.appendChild(w));
+        // Insert a space text node between words so they render with proper spacing
+        lineWords.forEach((w, i) => {
+          lineSpan.appendChild(w);
+          if (i < lineWords.length - 1) {
+            lineSpan.appendChild(document.createTextNode(" "));
+          }
+        });
         el.appendChild(lineSpan);
         lines.push(lineSpan);
         allLines.push(lineSpan);

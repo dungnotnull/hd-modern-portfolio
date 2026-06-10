@@ -37,13 +37,16 @@
   border-radius: 12px;
   background-color: rgba(139, 92, 246, 0.05);
   border: 1px solid rgba(139, 92, 246, 0.15);
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
 }
 
 .tech-item:hover {
   background-color: rgba(139, 92, 246, 0.15);
   border-color: rgba(139, 92, 246, 0.4);
   transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.15);
 }
 
 .tech-icon {

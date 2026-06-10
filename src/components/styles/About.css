@@ -26,9 +26,12 @@
 .about-me p {
   font-size: 22px;
   font-weight: 400;
-  line-height: 1.6;
-  letter-spacing: 0.5px;
+  line-height: 1.75;
+  letter-spacing: 0.2px;
   color: #d4d4d4;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 @media only screen and (min-width: 600px) {
@@ -57,7 +60,9 @@
   }
   .about-me p {
     font-size: 1.5vw;
-    line-height: 1.7;
+    line-height: 1.8;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 }
 @media only screen and (min-width: 1950px) {
