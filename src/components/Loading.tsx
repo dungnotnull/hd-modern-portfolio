@@ -4,6 +4,8 @@ import { useLoading } from "../context/LoadingProvider";
 
 import Marquee from "react-fast-marquee";
 
+const isMobile = () => window.innerWidth <= 1024;
+
 const Loading = ({ percent }: { percent: number }) => {
   const { setIsLoading } = useLoading();
   const [loaded, setLoaded] = useState(false);
@@ -23,16 +25,26 @@ const Loading = ({ percent }: { percent: number }) => {
   useEffect(() => {
     if (!isLoaded) return;
     import("./utils/initialFX").then((module) => {
-      if (module.initialFX) {
-        module.initialFX();
-      }
-      setClicked(true);
-      setTimeout(() => {
+      if (isMobile()) {
+        if (module.initialFX) {
+          module.initialFX();
+        }
         setFading(true);
         setTimeout(() => {
           setIsLoading(false);
+        }, 600);
+      } else {
+        setClicked(true);
+        setTimeout(() => {
+          if (module.initialFX) {
+            module.initialFX();
+          }
+          setFading(true);
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 800);
         }, 800);
-      }, 500);
+      }
     });
   }, [isLoaded]);
 

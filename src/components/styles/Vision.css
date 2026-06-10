@@ -5,19 +5,20 @@
   position: relative;
   height: auto;
   min-height: 60vh;
-  width: 100vw;
-  max-width: 100%;
+  width: var(--cWidth);
+  max-width: 1920px;
   margin: auto;
   padding: 120px 0;
-  background-color: rgba(255, 255, 255, 0.03);
 }
 
 .vision-container {
-  width: var(--cWidth);
-  max-width: 1920px;
-  padding: 0 20px;
+  width: 100%;
+  max-width: 900px;
+  padding: 48px 56px;
   box-sizing: border-box;
-  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 20px;
 }
 
 .vision-section h2 {
@@ -70,5 +71,9 @@
   }
   .vision-content p {
     font-size: 15px;
+  }
+  .vision-container {
+    padding: 32px 24px;
+    border-radius: 16px;
   }
 }

@@ -93,9 +93,13 @@
   white-space: nowrap;
   line-height: 1;
   user-select: none;
-  /* color: transparent; */
-  -webkit-text-stroke: 1.5px rgba(139, 92, 246, 0.22);
-  opacity: 0.65;
+  background: linear-gradient(135deg, #f472b6 0%, #fb923c 40%, #f472b6 80%, #fb923c 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.8;
+  animation: textShimmer 6s linear infinite;
 }
 
 /* ── Layer 2 — orbit ring ── */

@@ -2,8 +2,27 @@ import { splitText } from "../../utils/textSplitter";
 import gsap from "gsap";
 import { lenisInstance } from "../Navbar";
 
+const isMobile = () => window.innerWidth <= 1024;
+
 export function initialFX() {
   document.body.style.overflowY = "auto";
+
+  if (isMobile()) {
+    document.getElementsByTagName("main")[0].classList.add("main-active");
+    lenisInstance.start();
+    gsap.fromTo(
+      [".header", ".icons-section", ".nav-fade"],
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 0.6,
+        ease: "power1.inOut",
+        delay: 0.1,
+      }
+    );
+    return;
+  }
+
   lenisInstance.start();
   document.getElementsByTagName("main")[0].classList.add("main-active");
 
