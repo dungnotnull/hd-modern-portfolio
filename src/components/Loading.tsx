@@ -39,10 +39,12 @@ const Loading = ({ percent }: { percent: number }) => {
           if (module.initialFX) {
             module.initialFX();
           }
-          setFading(true);
           setTimeout(() => {
-            setIsLoading(false);
-          }, 800);
+            setFading(true);
+            setTimeout(() => {
+              setIsLoading(false);
+            }, 800);
+          }, 400);
         }, 800);
       }
     });
