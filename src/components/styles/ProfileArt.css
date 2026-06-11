@@ -248,11 +248,11 @@
   z-index: 5;
   top: 10%;
   bottom: auto;
-  right: -4%;
+  right: 0;
   left: auto;
   justify-content: flex-end;
   padding-right: 30px;
-  transform: translateZ(40px) scale(1.04);
+  transform: translateZ(0px) scale(1.04);
   transform-style: preserve-3d;
 }
 .profile-art__text--4 {
