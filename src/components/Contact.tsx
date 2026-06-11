@@ -41,7 +41,10 @@ const Contact = () => {
           </div>
           <div className="contact-box">
             <h2>
-              Designed and Developed <br /> by <span>Hoang Dung</span>
+              Designed and Developed <br /> by <span>Hoang Dung</span><br/>
+              Inspired by <span><a href="https://github.com/davidhckh/portfolio-2025" target="_blank" rel="noopener noreferrer">
+    davidhckh/portfolio-2025
+  </a></span>
             </h2>
           </div>
         </div>
